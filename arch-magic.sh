@@ -43,7 +43,12 @@ echo -e "${yellowColour}[+]${endColour}\t${grayColour}Nombre de su Linux Filesys
 read disk_Linux_File_System
 
 # FORMATEO COMPLETO Y ACTIVAR LA SWAP
-mkfs.fat -F32 $disk_boot
+echo -e "${yellowColour}[+]${endColour}\t${grayColour}Desea Formatear la boot?[y/n]${endColour}" && read answer
+if [[ $answer = y ]]; then
+  mkfs.fat -F32 $disk_boot
+else
+  echo -e "${yellowColour}[+]${endColour}\t${grayColour} LA BOOT NO SE VA A FORMATEAR${endColour}"
+fi
 
 if [[ $disk_swap = "" ]]; then
   echo -e "${yellowColour}[+]${endColour}\t${grayColour}NO HAY SWAP, PASANDO A LA SIGUIENTE FASE${endColour}"
