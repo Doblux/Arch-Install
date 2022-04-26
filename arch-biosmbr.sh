@@ -85,6 +85,7 @@ grub-install /dev/$disk
 grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable NetworkManager
+systemctl enable wpa_supplicant
 
 clear
 echo -e "\n${greenColour}[+]${endColour}\t${yellowColour}Escriba su Nombre de Usuario${endColour}\n"
