@@ -1,8 +1,5 @@
 #!/bin/bash
 
-loadkeys es
-clear
-
 #Colours
 greenColour="\e[0;32m\033[1m"
 endColour="\033[0m\e[0m"
@@ -12,6 +9,14 @@ yellowColour="\e[0;33m\033[1m"
 purpleColour="\e[0;35m\033[1m"
 turquoiseColour="\e[0;36m\033[1m"
 grayColour="\e[0;37m\033[1m"
+
+loadkeys es
+timedatectl set-ntp true
+pacman -Syyy
+pacman -S --noconfirm reflector
+reflector --verbose --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
+pacman -Syyy
+clear
 
 
 lsblk
