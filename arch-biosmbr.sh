@@ -21,21 +21,21 @@ clear
 
 lsblk
 echo -e "\n${greenColour}[+]${endColour}\t${yellowColour}Indtroduzca el nombre del disco duro / ssd (ejemplo: sda)${endColour}"
-read -p disk
+read disk
 cfdisk /dev/$disk
 
 
 clear
 echo -e "\n${greenColour}[+]${endColour}\t${yellowColour} nombre de su particion boot (solo nombre ejemplo: sda1)${endColour}"
-read -p disk_boot
+read disk_boot
 
 clear
 echo -e "\n${greenColour}[+]${endColour}\t${yellowColour} nombre de su particion swap (dejar en blanco si no hay) (ejemplo: sda3)${endColour}"
-read -p disk_swap
+read disk_swap
 
 clear
 echo -e "\n${greenColour}[+]${endColour}\t${yellowColour} nombre de su particion del tipo: Linux File System (ejemplo: sda2)${endColour}"
-read -p disk_Linux_File_System
+read disk_Linux_File_System
 
 
 # formateo de particiones
